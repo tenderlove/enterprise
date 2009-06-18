@@ -1,7 +1,14 @@
-History.txt
+.autotest
+CHANGELOG.rdoc
 Manifest.txt
-README.txt
+README.rdoc
 Rakefile
 bin/enterprise
+bin/enterprise_ruby
 lib/enterprise.rb
+lib/enterprise/file_loader.rb
+lib/enterprise/sexml.rb
+lib/enterprise/sexp_hacks.rb
+test/assets/hello_world.xml
+test/assets/reference.rb
 test/test_enterprise.rb

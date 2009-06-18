@@ -1,32 +1,151 @@
 = enterprise
 
-* FIX (url)
+* http://github.com/tenderlove/enterprise/
 
 == DESCRIPTION:
 
-FIX (describe your package)
+Wish you could write your Ruby in XML?  Has the fact that Ruby is not
+"enterprise" got you down?  Do you feel like your Ruby code could be made to
+be more "scalable"?  Well look no further my friend.  You've found the
+enterprise gem.  Once you install this gem, you too can make Rails scale, Ruby
+faster, your code more attractive, *and* have more XML in your life.
+
+I'm sure you're asking yourself, "how can the enterprise gem promise so
+much?".  Well the answer is easy, through the magic of XML!  The enterprise
+gem allows you to write your Ruby code in XML, therefore making your Ruby and
+Rails code scale.  Benefits of writing your code in XML include:
+
+  * It's easy to read!
+  * It scales!
+  * Cross platform
+  * TRANSFORM! your code using XSLT!
+  * Search your AST with XPath *or* CSS!
+
+The enterprise gem even comes with a handy "enterprise" binary to help you
+start converting your existing *legacy* Ruby code in to scaleable, easy to
+read XML files.  Let's start getting rid of that nasty Ruby code and replacing
+it with XML today!
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* require files completely written in XML
+* convert existing legacy ruby code to XML
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+Let's say you have some legacy Ruby code that looks like this:
+
+  class Foo
+    def hello_world
+      "bar"
+    end
+  end
+  
+  puts Foo.new.hello_world
+
+Let's convert that crappy ruby code to XML:
+
+  <?xml version="1.0"?>
+  <s>
+    <block type="Symbol" value="block"/>
+    <s>
+      <class type="Symbol" value="class"/>
+      <Foo type="Symbol" value="Foo"/>
+      <special type="NilClass" value=""/>
+      <s>
+        <scope type="Symbol" value="scope"/>
+        <s>
+          <defn type="Symbol" value="defn"/>
+          <special type="Symbol" value="hello_world"/>
+          <s>
+            <args type="Symbol" value="args"/>
+          </s>
+          <s>
+            <scope type="Symbol" value="scope"/>
+            <s>
+              <block type="Symbol" value="block"/>
+              <s>
+                <str type="Symbol" value="str"/>
+                <bar type="String" value="bar"/>
+              </s>
+            </s>
+          </s>
+        </s>
+      </s>
+    </s>
+    <s>
+      <call type="Symbol" value="call"/>
+      <special type="NilClass" value=""/>
+      <puts type="Symbol" value="puts"/>
+      <s>
+        <arglist type="Symbol" value="arglist"/>
+        <s>
+          <call type="Symbol" value="call"/>
+          <s>
+            <call type="Symbol" value="call"/>
+            <s>
+              <const type="Symbol" value="const"/>
+              <Foo type="Symbol" value="Foo"/>
+            </s>
+            <new type="Symbol" value="new"/>
+            <s>
+              <arglist type="Symbol" value="arglist"/>
+            </s>
+          </s>
+          <special type="Symbol" value="hello_world"/>
+          <s>
+            <arglist type="Symbol" value="arglist"/>
+          </s>
+        </s>
+      </s>
+    </s>
+  </s>
+
+Now, simply save that XML file out to "test.xml".  With the enterprise gem,
+to execute this xml file, we just do:
+
+  $ enterprise_ruby test.xml
+
+enterprise lets you do a require on pure xml files too.  We can load the
+test.xml file like so:
+
+  require 'rubygems'
+  require 'enterprise'
+  require 'test'
+
+The final feature is an enterprise migration assistant.  To migrate an entire
+project to be enterprise, just do this:
+
+  $ enterprise some_directory
+
+To make a single file enterprise, just give it the filename:
+
+  $ enterprise some_file.rb
+
+I'm sure you're asking yourself, "how much does this enterprise solution cost
+me?".  Well, like any good enterprise system, it is insanely expensive.  This
+gem will cost you eleventy billion dollars payable to me, now.
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+Like all good enterprise solutions, we do our best to get you stuck in a web
+of dependencies.  We are working hard to increase the number of dependencies,
+but here is the current list
+
+* ruby2ruby
+* ruby_parser
+* nokogiri
+* polyglot
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install enterprise
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2009 FIX
+Copyright (c) 2009 Aaron Patterson
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
