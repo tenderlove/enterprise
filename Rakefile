@@ -9,6 +9,7 @@ Hoe.spec 'enterprise' do
   self.history_file  = 'CHANGELOG.rdoc'
   self.extra_rdoc_files  = FileList['*.rdoc']
   self.extra_deps = ['ruby2ruby', 'ruby_parser', 'nokogiri', 'polyglot']
+  self.rubyforge_name = 'seattlerb'
 end
 
 # vim: syntax=ruby
