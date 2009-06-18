@@ -2,5 +2,6 @@
 
 * 1 major enhancement
 
-  * Birthday!
+  * Entering in to the enterprise
+  * Bringing ruby in the back door
 
