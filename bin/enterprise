@@ -8,6 +8,14 @@ if File.directory? ARGV[0]
   Find.find ARGV[0] do |file|
     next if File.directory? file
     next unless File.extname(file) == '.rb'
+    sexml = Enterprise::SEXML File.read(file), file
+    File.open(file.sub(/\.rb/, '.xml'), 'wb') { |f|
+      sexml.write_to f
+    }
   end
 else
+  sexml = Enterprise::SEXML File.read(ARGV[0]), ARGV[0]
+  File.open(ARGV[0].sub(/\.rb/, '.xml'), 'wb') { |f|
+    sexml.write_to f
+  }
 end
