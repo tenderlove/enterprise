@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'enterprise'
+require 'find'
+
+if File.directory? ARGV[0]
+  Find.find ARGV[0] do |file|
+    next if File.directory? file
+    next unless File.extname(file) == '.rb'
+  end
+else
+end

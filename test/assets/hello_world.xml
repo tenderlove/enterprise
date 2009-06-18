@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<s>
+  <class type="Symbol" value="class"/>
+  <HelloWorld type="Symbol" value="HelloWorld"/>
+  <special type="NilClass" value=""/>
+  <s>
+    <scope type="Symbol" value="scope"/>
+    <s>
+      <defn type="Symbol" value="defn"/>
+      <innernet type="Symbol" value="innernet"/>
+      <s>
+        <args type="Symbol" value="args"/>
+      </s>
+      <s>
+        <scope type="Symbol" value="scope"/>
+        <s>
+          <block type="Symbol" value="block"/>
+          <s>
+            <call type="Symbol" value="call"/>
+            <s>
+              <str type="Symbol" value="str"/>
+              <special type="String" value="the innernet is awesome"/>
+            </s>
+            <sub type="Symbol" value="sub"/>
+            <s>
+              <arglist type="Symbol" value="arglist"/>
+              <s>
+                <lit type="Symbol" value="lit"/>
+                <special type="Regexp" value="BAgvB25uAA==&#10;"/>
+              </s>
+              <s>
+                <str type="Symbol" value="str"/>
+                <bar type="String" value="bar"/>
+              </s>
+            </s>
+          </s>
+        </s>
+      </s>
+    </s>
+  </s>
+</s>
