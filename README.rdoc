@@ -15,11 +15,11 @@ much?".  Well the answer is easy, through the magic of XML!  The enterprise
 gem allows you to write your Ruby code in XML, therefore making your Ruby and
 Rails code scale.  Benefits of writing your code in XML include:
 
-  * It's easy to read!
-  * It scales!
-  * Cross platform
-  * TRANSFORM! your code using XSLT!
-  * Search your AST with XPath *or* CSS!
+* It's easy to read!
+* It scales!
+* Cross platform
+* TRANSFORM! your code using XSLT!
+* Search your AST with XPath *or* CSS!
 
 The enterprise gem even comes with a handy "enterprise" binary to help you
 start converting your existing *legacy* Ruby code in to scaleable, easy to
