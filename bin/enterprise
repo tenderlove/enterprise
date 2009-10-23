@@ -4,18 +4,23 @@ require 'rubygems'
 require 'enterprise'
 require 'find'
 
-if File.directory? ARGV[0]
-  Find.find ARGV[0] do |file|
-    next if File.directory? file
-    next unless File.extname(file) == '.rb'
-    sexml = Enterprise::SEXML File.read(file), file
-    File.open(file.sub(/\.rb/, '.xml'), 'wb') { |f|
-      sexml.write_to f
-    }
+files = []
+
+ARGV.each do |path|
+  if File.directory? path
+    Find.find path do |file|
+      next if File.directory? file
+      next unless File.extname(file) == '.rb'
+      files << file
+    end
+  else
+    files << path
   end
-else
-  sexml = Enterprise::SEXML File.read(ARGV[0]), ARGV[0]
-  File.open(ARGV[0].sub(/\.rb/, '.xml'), 'wb') { |f|
+end
+
+files.each do |path|
+  sexml = Enterprise::SEXML File.read(path), path
+  File.open(path.sub(/\.rb/, '.xml'), 'wb') do |f|
     sexml.write_to f
-  }
+  end
 end
