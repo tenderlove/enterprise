@@ -4,7 +4,9 @@ require 'ruby2ruby'
 module Enterprise
   def self.SEXML codes, filename = nil
     sexp = RubyParser.new.parse codes, filename
-    sexp.to_xml
+    doc = sexp.to_xml
+    doc.encoding = "UTF-8"
+    doc
   end
 
   class XMLToSexp
@@ -33,7 +35,9 @@ end
 
 class Nokogiri::XML::Node
   def to_sexp
-    accept Enterprise::XMLToSexp.new
+    result = accept Enterprise::XMLToSexp.new
+    $stderr.puts result.inspect if ENV['ENTERPRISE_DEBUG'].to_i > 1
+    result
   end
 
   def to_ruby
