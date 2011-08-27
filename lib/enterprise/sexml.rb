@@ -4,6 +4,7 @@ require 'ruby2ruby'
 module Enterprise
   def self.SEXML codes, filename = nil
     sexp = RubyParser.new.parse codes, filename
+    sexp ||= s(:nil)
     doc = sexp.to_xml
     doc.encoding = "UTF-8"
     doc

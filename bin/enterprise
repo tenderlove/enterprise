@@ -19,6 +19,7 @@ ARGV.each do |path|
 end
 
 files.each do |path|
+  $stderr.puts path if ENV['ENTERPRISE_DEBUG']
   sexml = Enterprise::SEXML File.read(path), path
   File.open(path.sub(/\.rb/, '.xml'), 'wb') do |f|
     sexml.write_to f
